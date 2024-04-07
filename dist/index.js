@@ -1,7 +1,7 @@
 "use strict";
 // Typescript DataTypes
 let a = 25;
-a = "sad"; // Error: Type 'string' is not assignable to type 'number'
+// a="sad" // Error: Type 'string' is not assignable to type 'number'
 console.log(a);
 const b = 10;
 const moiz = "moiz";
@@ -48,3 +48,33 @@ const obj2 = {
     weight: 12,
     gender: true
 };
+const getData = (product) => {
+    console.log(product);
+};
+const prod = {
+    name: "Mac book",
+    stock: "3",
+    isAvailable: false,
+    id: 123
+};
+getData(prod);
+const errorhANDLER = () => {
+    throw new Error();
+};
+// const mode:themeMode="light"
+// ---------------------------------Classes in Typescipt------------------------------
+class Player {
+    constructor(height, weight) {
+        this.height = 34;
+        this.weight = 20;
+        // Getter method
+        this.getHeight = () => {
+            return this.height;
+        };
+        this.weight = weight;
+        this.height = height;
+    }
+}
+let moizinstance = new Player(10, 150);
+console.log(moizinstance.getHeight());
+// --------------------------Type Assertion--------------------------
