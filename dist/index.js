@@ -78,3 +78,100 @@ class Player {
 let moizinstance = new Player(10, 150);
 console.log(moizinstance.getHeight());
 // --------------------------Type Assertion--------------------------
+// const dom1 = document.getElementById("btn") as HTMLElement;
+// const dom2 = <HTMLElement> document.getElementById("btn") ;
+// const dom3 =  document.getElementById("btn")!;
+// const image =  document.getElementById("img") as HTMLImageElement;
+// dom1.onclick
+// image.src="none"
+// const img=document.querySelector("img")!;
+// img.src="none"
+const form = document.getElementById("myform");
+const display = document.getElementById("displayresult");
+form.onsubmit = (e) => {
+    e.preventDefault();
+    display.innerText = `The input you Entered is ${someinput.value}`;
+};
+// if you want to convert any value to number we can use Number(someinput.value)
+const someinput = document.querySelector("form > input");
+const Personobj = {
+    name: "MOiz",
+    email: "moiz77131@gmail.com"
+};
+let key = "email";
+Personobj[key];
+// const getOBJData=(key:"name"| "email"):string=>{
+// return Personobj[key];
+// }
+const getOBJData = (key) => {
+    return Personobj[key];
+}; // Problem solved
+console.log(getOBJData("email"));
+const users = {
+    Moiz: {
+        age: 24
+    },
+    Love: {
+        age: 24
+    },
+    Mama: {
+        age: 24
+    },
+    forever: {
+        age: 24
+    }
+};
+// Parameters
+const mul = (n, m) => {
+    return m * n;
+};
+//  const concat=<T>(n:T):T=>{
+//             // let text:T="Moiz loves Mama";
+//             return n;
+//  }
+const Sami = {
+    name: "Sami",
+    post: "frontend dev",
+    postno: 3
+};
+// const ans= concat<Employee>(Sami); // Now here we are passing Data type we will use
+// console.log(ans.post);
+const numberarray = []; // under the hood interface Array<T>
+// Plot Twist :  we can use multiple Generic
+// const concat=<T,U>(n:T,m:U):{n:T,m:U}=>{
+//     // let text:T="Moiz loves Mama";
+//     // return n+m; // Now Typescript doesnot know what data will be coming so it is not valid
+//     return {n,m}; 
+// }
+// Extends
+const concat = (n, m) => {
+    // let text:T="Moiz loves Mama";
+    // return n+m; // Now Typescript doesnot know what data will be coming so it is not valid
+    return { n, m }; // Now Typescript doesnot know what data will be coming so it is not valid
+};
+const moizBoy = {
+    name: "Moiz",
+    post: "Tea BOy",
+    postno: 0,
+    salary: 1000000
+};
+// const ans = concat<Employee,Employee2>(Sami,moizBoy);
+// Again consider our Employee Type
+const data = [
+    {
+        name: "Moiz",
+        post: "Tea BOy",
+        postno: 0,
+    },
+    {
+        name: "Sami",
+        post: "Clerk",
+        postno: 1,
+    },
+];
+const filterONKey = (arr, key, value) => {
+    return arr.filter((item) => item[key] === value);
+};
+const filteredData = filterONKey(data, "name", "Moiz");
+// not working Argument of type 'Employee[]' is not assignable to parameter of type '[]'.
+console.log(filteredData);
